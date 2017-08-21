@@ -36,6 +36,7 @@
 // }
 import { Injectable } from '@angular/core';
 import { Http } from "@angular/http";
+import {Empleado} from './Empleado';
 
 @Injectable()
 export class ServicioEmpleadosComponent {
@@ -44,21 +45,37 @@ export class ServicioEmpleadosComponent {
         cargada:boolean = false; //confirmar si ya cargo el servicio.
         cargada_json:boolean = false;
         listaEmpleados:any[] =[];
+        empleado:any[] =[];
+       // empleados = new Empleado();
 
         constructor( public http:Http ) {
           this.carga_datos();
-         
+        }
+  
+        public carga_datos(){
+          this.http.get("https://jsonplaceholder.typicode.com/users").
+            subscribe(data => {
+            //console.log(data.json());
+            this.cargada_json = true;
+            this.listaEmpleados = data.json();
+          })
         }
 
-    
-            public carga_datos(){
-                this.http.get("https://jsonplaceholder.typicode.com/users").
-                                 subscribe(data => {
-                                 //console.log(data.json());
-                                 this.cargada_json = true;
-                                 this.listaEmpleados = data.json();
-                              })
-              }
-
-     
+        public obtener_empleado(id:number){
+          this.http.get("https://jsonplaceholder.typicode.com/users")
+          .subscribe(data => {
+                      console.log("Obteniendo empleado");
+                      this.listaEmpleados = data.json();
+                   
+                      this.listaEmpleados.forEach(element => {
+                          if(element.id == id) {
+                              this.empleado = element;
+                              console.log(this.empleado);
+                             // console.log(this.empleados);
+                             // this.empleados = element;
+                              return this.empleado;
+                          }
+                        });
+            })
+      }
 }

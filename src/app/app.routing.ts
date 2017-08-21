@@ -1,9 +1,11 @@
-import {Routes, RouterModule} from '@angular/router';
-import { EmpleadosComponent }  from './empleados.component';
-// import { MateriasComponent }  from './materias.component';
+import { Routes, RouterModule} from '@angular/router';
+import {  DatosEmpleadosComponent,
+          EmpleadosComponent
+       } from "./index.paginas";
 
 const APP_ROUTES: Routes = [
     {path: 'empleados', component: EmpleadosComponent},
-    // {path: 'materias/:id', component: MateriasComponent}
+    {path: 'datosEmpleado/:id', component: DatosEmpleadosComponent},
+    {path: '**', pathMatch: 'full', redirectTo: 'empleados'}
 ];
-export const routing = RouterModule.forRoot(APP_ROUTES);
+export const app_routing = RouterModule.forRoot(APP_ROUTES);

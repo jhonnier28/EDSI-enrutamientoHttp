@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { EmpleadosComponent } from './empleados.component';
 import { DatosEmpleadosComponent } from './datos.empleado.component';
+import { app_routing }  from './app.routing';
 
 //Servicios
 import { ServicioEmpleadosComponent } from "./servicio.empleados";
@@ -20,7 +21,8 @@ import { ServicioEmpleadosComponent } from "./servicio.empleados";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    app_routing
   ],
   providers: [
     ServicioEmpleadosComponent
