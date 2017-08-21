@@ -1,35 +1,25 @@
-import { Component } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/toPromise'
 
-@Component({
-  selector: 'empleados',
-  templateUrl: './empleados.component.html'
-})
-export class EmpleadosComponent {
+  import {ServicioEmpleadosComponent} from './servicio.empleados';
+  import {Router} from '@angular/router';
+  import { Component } from '@angular/core';
+  import { Http } from '@angular/http';
+  import 'rxjs/add/operator/toPromise'
+  
+  @Component({
+    selector: 'empleados',
+    templateUrl: './empleados.component.html',
+    providers: [ServicioEmpleadosComponent]
 
-    listaEmpleados: any;
-    constructor(private http: Http){
-        this.obtenerEmpleados().then(respuesta => this.listaEmpleados = respuesta);
+  })
+  export class EmpleadosComponent {
+     listaEmpleados:any[] =[];
+     constructor(public _is:ServicioEmpleadosComponent){
+         
+      }
+
+    seleccionarEmpleado(empleado){
+        console.log("Empleado seleccioando:"+empleado.id);
     }
-    obtenerEmpleados(){
-        return this.http.get("https://jsonplaceholder.typicode.com/users")
-        .toPromise()
-        .then(respuesta => respuesta.json())
-        .catch(this.ocurrioUnError)
-    }
-
-    ocurrioUnError(error)
-    {
-        console.log("Ocurrio un error:", error);
-        return Promise.reject(error.message);
-    }
-
-    seleccionarEmpleado(empleado)
-    {
-       // this.router.navigate(['materias',estudiante.id]);
-       console.info(empleado);
-    }
-}
-
+  }
+  
 

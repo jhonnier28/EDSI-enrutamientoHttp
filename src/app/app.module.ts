@@ -5,18 +5,27 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { EmpleadosComponent } from './empleados.component';
+import { DatosEmpleadosComponent } from './datos.empleado.component';
+
+//Servicios
+import { ServicioEmpleadosComponent } from "./servicio.empleados";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmpleadosComponent
+    EmpleadosComponent,
+    DatosEmpleadosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    ServicioEmpleadosComponent
+  ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
