@@ -1,0 +1,17 @@
+ <div *ngIf="listaEmpleados && listaEmpleados.length">
+    <h3>Listado de Empleados</h3>
+   <table class="table table-striped">
+        <tr>
+            <td>Posicion</td>
+            <td>Nombre</td>
+            <td>Usuario</td>
+            <td>Email</td>
+        </tr>
+        <tr *ngFor="let empleado of listaEmpleados; let i=index;">
+            <td (click)="seleccionarEmpleado(empleado.id)">{{i+1}}</td>
+            <td>{{empleado.name}}</td>
+            <td>{{empleado.username}}</td>
+            <td>{{empleado.email}}</td>
+        </tr>
+   </table>
+</div>

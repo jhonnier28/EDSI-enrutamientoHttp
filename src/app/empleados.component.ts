@@ -4,13 +4,9 @@ import 'rxjs/add/operator/toPromise'
 
 @Component({
   selector: 'empleados',
-  template: `<ul>
-                <li *ngFor="let empleado of listaEmpleados; let i=index;">
-                    {{empleado.name}}
-                </li>
-             </ul>`
+  templateUrl: './empleados.component.html'
 })
-export class ServicioComponent {
+export class EmpleadosComponent {
 
     listaEmpleados: any;
     constructor(private http: Http){
@@ -23,13 +19,17 @@ export class ServicioComponent {
         .catch(this.ocurrioUnError)
     }
 
-
     ocurrioUnError(error)
     {
         console.log("Ocurrio un error:", error);
         return Promise.reject(error.message);
     }
 
+    seleccionarEmpleado(empleado)
+    {
+       // this.router.navigate(['materias',estudiante.id]);
+       console.info(empleado);
+    }
 }
 
 
