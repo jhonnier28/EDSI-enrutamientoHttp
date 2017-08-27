@@ -46,6 +46,9 @@ export class ServicioEmpleadosComponent {
         cargada_json:boolean = false;
         listaEmpleados:any[] =[];
         empleado:any[] =[];
+        company:any[] =[];
+        address:any[] =[];
+        geo:any[] =[];
        // empleados = new Empleado();
 
         constructor( public http:Http ) {
@@ -71,6 +74,9 @@ export class ServicioEmpleadosComponent {
                           if(element.id == id) {
                               this.empleado = element;
                               console.log(this.empleado);
+                              this.company = this.empleado['company'];
+                              this.address = this.empleado['address'];
+                              this.geo = this.empleado['address']['geo'];
                              // console.log(this.empleados);
                              // this.empleados = element;
                               return this.empleado;

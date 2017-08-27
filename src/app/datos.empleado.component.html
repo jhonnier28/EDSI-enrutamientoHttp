@@ -1,20 +1,91 @@
-<div class="container">
-    <h3 class="center">Datos del Empleado</h3>
-    <table class="table table-striped">
-        <tr>
-            <td class="letra">Id</td>
-            <td class="letra">Nombre</td>
-            <td class="letra">Usuario</td>
-            <td class="letra">Email</td>
-            <td class="letra">Compania</td>
-        </tr>
-        <tr>
-            <td>{{servicioEmpleado.empleado.id}}</td>
-            <td>{{servicioEmpleado.empleado.name}}</td>
-            <td>{{servicioEmpleado.empleado.username}}</td>
-            <td>{{servicioEmpleado.empleado.email}}</td>
-            <!-- <td>{{servicioEmpleado.empleado.Compania.name}}</td>> -->
-            <td>datos</td>
-        </tr>
-    </table>
+
+<hr>
+    <div class="container">
+        <div class="row">
+            <h3 class="center col">Datos del Empleado {{servicioEmpleado.empleado.id}}</h3>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <label for="empleadoId" class="col-sm-2 control-label">Id</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" disabled id="empleadoId" value="{{servicioEmpleado.empleado.id}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="w-100"> </div>
+        
+    <div class="container  margin-top">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <label for="empleadoId" class="col-sm-2 control-label">Nombre</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" disabled id="empleadoNombre" value="{{servicioEmpleado.empleado.name}}">
+            </div>
+    </div>
+</div>
+
+<div class="container margin-top">
+    <div class="row"> 
+        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+            <label for="empleadoEmail" class="col-sm-2 control-label">Email</label>
+        </div>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" disabled id="empleadoEmail" value="{{servicioEmpleado.empleado.email}}">
+            </div>
+        </div>
+</div>
+
+<div class="container margin-top">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <label for="empleadoEmail" class="col-sm-2 control-label">Direccion</label>
+            </div>
+                <div class="col-sm-6">
+            <input type="text" class="form-control" disabled id="empleadoDireccion" value="{{servicioEmpleado.address.city}} - {{servicioEmpleado.address.street}} - {{servicioEmpleado.address.suite}} - {{servicioEmpleado.address.zipcode}}">
+        </div>
+    </div>
+</div>
+                
+    <div class="container margin-top">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2">
+                    <label for="empleadoEmail" class="col-sm-2 control-label">Compania</label>
+                </div>
+                    <div class="col-sm-6">
+            <input type="text" class="form-control" disabled id="empleadoCompania" value="{{servicioEmpleado.company.name}} - {{servicioEmpleado.company.catchPhrase}} - {{servicioEmpleado.company.bs}}">
+        </div>
+    </div>
+</div>
+
+    <div class="container margin-top">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2">
+                    <label for="empleadoEmail" class="col-sm-2 control-label">Ubicacion Geografica</label>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" disabled id="empleadoUbicacion" value="Latitud: {{servicioEmpleado.geo.lat}},  Longitud: {{servicioEmpleado.geo.lng}}">
+                </div>
+        </div>
+    </div>
+
+<div class="container margin-top">
+    <div class="row">
+        <div class="col-sm-9 "></div>
+        <div class="col-sm-3">
+             <button class="btn btn-primary " routerLink="/empleados">Regresar</button>
+        </div>
+    </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
+import {Router} from '@angular/router';
 import 'rxjs/add/operator/toPromise'
 import { ActivatedRoute } from '@angular/router'
 import { ServicioEmpleadosComponent } from './servicio.empleados'
@@ -25,5 +26,11 @@ export class DatosEmpleadosComponent {
       //this.empleado = new Empleado(servicioEmpleado.obtener_empleado(this.id));
       console.log("::::::::::::empleado: "+ servicioEmpleado.obtener_empleado(this.id));
   }
+
+  regresar(){
+    console.log("Boton regresar");
+  }
+
+
 }
 

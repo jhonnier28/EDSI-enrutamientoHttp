@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 .letra{
-    /*  */
     /* color: blue; */
     font-weight: bold;
 }
@@ -9,6 +8,17 @@
     text-align: center;
 }
 
-.seleccionar{
-    cursor: pointer; cursor: hand;
+.cursor-pointer{
+    cursor: pointer; 
+}
+
+.button {
+    position: relative;
+    top: 70%;
+    left: 41%;
+   
+}
+
+.margin-top {
+    margin-top: 8px;
 }

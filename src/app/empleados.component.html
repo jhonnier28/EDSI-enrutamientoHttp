@@ -1,18 +1,20 @@
 
+<hr>
 <div class="container">
-<h3 class="center">Listado de Empleados</h3>
-   <table class="table table-striped">
-        <tr>
-            <td class="letra">Id</td>
-            <td class="letra">Nombre</td>
-            <td class="letra">Usuario</td>
-            <td class="letra">Email</td>
-        </tr>
-        <tr *ngFor="let empleado of _is.listaEmpleados; let i=index;">
-            <td class="seleccionar" (click)="seleccionarEmpleado(empleado)">{{empleado.id}}</td>
-            <td >{{empleado.name}}</td>
-            <td>{{empleado.username}}</td>
-            <td>{{empleado.email}}</td>
-        </tr>
-</table>
+    <h3 class="center">Listado de Empleados</h3>
+    <hr>
+    <table class="table table-striped">
+            <tr>
+                <td class="letra">Id</td>
+                <td class="letra">Nombre</td>
+                <td class="letra">Usuario</td>
+                <td class="letra">Email</td>
+            </tr>
+            <tr class="cursor-pointer"  *ngFor="let empleado of _is.listaEmpleados; let i=index;" (click)="seleccionarEmpleado(empleado)">
+                <td>{{empleado.id}}</td>
+                <td >{{empleado.name}}</td>
+                <td>{{empleado.username}}</td>
+                <td>{{empleado.email}}</td>
+            </tr>
+    </table>
 </div>
